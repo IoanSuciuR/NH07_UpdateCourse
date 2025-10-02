@@ -133,7 +133,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="884,2214" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="810,2442" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="EmailList" />
       <Variable x:TypeArguments="sd:DataTable" Name="EmployeeTable" />
@@ -204,13 +204,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[EmployeeTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="536,1347" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[EmployeeTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="536,1575" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="502,1160" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="502,1388" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="QueueItemContent" />
             </Sequence.Variables>
@@ -219,7 +219,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Create Queue Dictionary" sap:VirtualizedContainerService.HintSize="468,881" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Create Queue Dictionary" sap:VirtualizedContainerService.HintSize="468,1109" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,12 +249,28 @@
                   <InArgument x:TypeArguments="x:Object">[CurrentRow("Employee Id").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[QueueItemContent("Email")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[CurrentRow("Email - Primary Work").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Object">[QueueItemContent("JobTitle")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Object">[CurrentRow("Job Title").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[QueueItemContent("HireDate")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[CurrentRow("Hire Date").ToString]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_10">
