@@ -4,7 +4,7 @@
   "description": "Retrieves report",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[3.2.1]",
+    "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.MicrosoftOffice365.Activities": "[3.4.10]",
     "UiPath.System.Activities": "[24.10.8]",
     "UiPath.UIAutomation.Activities": "[24.10.13]"
