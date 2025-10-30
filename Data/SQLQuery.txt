@@ -1,0 +1,1 @@
+select * from ActiveReport where not Supervisory_Organization like '%amer%' and not Supervisory_Organization like '%bdr%' and Hire_Date  BETWEEN <period> and Supervisory_Organization like '%sales%'
