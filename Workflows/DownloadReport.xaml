@@ -121,7 +121,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="692,2461" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="692,1414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBConnection" />
@@ -144,10 +144,10 @@
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <ui:ReadTextFile File="{x:Null}" Content="[SQLQuery]" DisplayName="Read Text File" FileName="Data\SQLQuery.txt" sap:VirtualizedContainerService.HintSize="518,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Running Query for &quot; + String.Format(&quot;'{0:yyyy-MM-dd}' AND '{1:yyyy-MM-dd}'&quot;, Date.Parse(LastDBRun).AddDays(1), DateTime.Now.AddDays(DayOfWeek.Sunday - DateTime.Now.DayOfWeek))]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Running Query for &quot; + String.Format(&quot;'{0:yyyy-MM-dd}' AND '{1:yyyy-MM-dd}'&quot;, Date.Parse(LastDBRun).AddDays(1), DateTime.Now.AddDays(7 - CInt(DateTime.Now.DayOfWeek)))]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -157,7 +157,7 @@
         <OutArgument x:TypeArguments="x:String">[SQLQuery]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[SQLQuery.Replace("&lt;period&gt;",String.Format("'{0:yyyy-MM-dd}' AND '{1:yyyy-MM-dd}'", Date.Parse(LastDBRun).AddDays(1), DateTime.Now.AddDays(DayOfWeek.Sunday - DateTime.Now.DayOfWeek))
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[SQLQuery.Replace("&lt;period&gt;",String.Format("'{0:yyyy-MM-dd}' AND '{1:yyyy-MM-dd}'", Date.Parse(LastDBRun).AddDays(1), DateTime.Now.AddDays(7 - CInt(DateTime.Now.DayOfWeek)))
 )]</InArgument>
       </Assign.Value>
     </Assign>
@@ -205,7 +205,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,1211" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,48" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,1069" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -284,7 +284,7 @@
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
