@@ -1,1 +1,52 @@
-select * from ActiveReport where not Supervisory_Organization like '%amer%' and not Supervisory_Organization like '%bdr%' and Hire_Date  BETWEEN <period> and Supervisory_Organization like '%sales%'
+WITH SelectedUser AS (
+    SELECT TOP 1 
+        UserID,
+        UserEmail,
+        LastLogin
+    FROM acad.user_data
+    WHERE UserEmail = '<<email>>'
+    ORDER BY LastLogin DESC
+),
+LatestLPProgress AS (
+    SELECT 
+        ulpd.UserID,
+        ulpd.LearningPlanId AS ItemId,
+        ulpd.LearningPlanName AS ItemName,
+        ulpd.Status,
+        ulpd.ProgressPercentage,
+        ulpd.LastAccessDate,
+        'LearningPlan' AS ItemType,
+        ROW_NUMBER() OVER (PARTITION BY ulpd.UserID, ulpd.LearningPlanId ORDER BY ulpd.LastAccessDate DESC) AS rn
+    FROM acad.user_lp_progress_data ulpd
+    WHERE ulpd.LearningPlanId IN ('30003420','30003421','30003417','30003418')
+),
+LatestCourseProgress AS (
+    SELECT 
+        ucpd.UserID,
+        ucpd.CourseID AS ItemId,
+        ucpd.CourseTitle AS ItemName,
+        ucpd.Status,
+        ucpd.ProgressPercentage,
+        ucpd.LastAccessDate,
+        'Course' AS ItemType,
+        ROW_NUMBER() OVER (PARTITION BY ucpd.UserID, ucpd.CourseID ORDER BY ucpd.LastAccessDate DESC) AS rn
+    FROM acad.user_course_progress_data ucpd
+    WHERE ucpd.CourseID IN ('11623','5934','3460')
+),
+CombinedProgress AS (
+    SELECT * FROM LatestLPProgress WHERE rn = 1
+    UNION ALL
+    SELECT * FROM LatestCourseProgress WHERE rn = 1
+)
+SELECT 
+    su.UserEmail,
+    su.UserID,
+    cp.ItemType,
+    cp.ItemId,
+    cp.ItemName,
+    cp.Status,
+    cp.ProgressPercentage,
+    cp.LastAccessDate
+FROM SelectedUser su
+LEFT JOIN CombinedProgress cp ON su.UserID = cp.UserID
+ORDER BY cp.ItemType, cp.LastAccessDate DESC;
