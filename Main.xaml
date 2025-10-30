@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_TestRead="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:n="clr-namespace:NH07_UpdateCourse;assembly=DataService.NH07_UpdateCourse" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_TestRead="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:n="clr-namespace:NH07_UpdateCourse;assembly=DataService.NH07_UpdateCourse" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TestRead" Type="InArgument(x:Boolean)" />
   </x:Members>
@@ -158,7 +158,7 @@
       <AssemblyReference>DataService.NH07_UpdateCourse</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1080,1757" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1297,1453" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBConnection" />
@@ -169,20 +169,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings - Invoke Workflow File (Data\InitAllSettings.xaml)" sap:VirtualizedContainerService.HintSize="552,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data\InitAllSettings.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings - Invoke Workflow File (Data\InitAllSettings.xaml)" sap:VirtualizedContainerService.HintSize="536,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data\InitAllSettings.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile" />
         <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings"}]</InArgument>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToDb - Invoke Workflow File (Workflows\ConnectToDb.xaml)" sap:VirtualizedContainerService.HintSize="552,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\ConnectToDb.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToDb - Invoke Workflow File (Workflows\ConnectToDb.xaml)" sap:VirtualizedContainerService.HintSize="536,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\ConnectToDb.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
         <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_DBConnection">[DBConnection]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uda:QueryEntityRecords x:TypeArguments="n:NewHireManagementEmployee" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="552,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[RecordsToUpdate]" QueriedEntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+    <uda:QueryEntityRecords x:TypeArguments="n:NewHireManagementEmployee" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="536,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[RecordsToUpdate]" QueriedEntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
       <uda:QueryEntityRecords.FilterArguments>
         <uda:FilterArgument FilterActivityType="{x:Null}">
           <uda:FilterArgument.Filter>
@@ -205,13 +205,13 @@
         </scg:List>
       </uda:QueryEntityRecords.FilterValues>
     </uda:QueryEntityRecords>
-    <ui:ForEach x:TypeArguments="n:NewHireManagementEmployee" CurrentIndex="{x:Null}" DisplayName="For Each currentEntity" sap:VirtualizedContainerService.HintSize="552,1208" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RecordsToUpdate]">
+    <ui:ForEach x:TypeArguments="n:NewHireManagementEmployee" CurrentIndex="{x:Null}" DisplayName="For Each currentEntity" sap:VirtualizedContainerService.HintSize="536,904" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RecordsToUpdate]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="n:NewHireManagementEmployee">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="n:NewHireManagementEmployee" Name="currentEntity" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,1071" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="502,767" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="CoursesTable" />
             </Sequence.Variables>
@@ -220,7 +220,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="484,1011" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="468,707" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="SQLQuery" />
               </Sequence.Variables>
@@ -229,8 +229,8 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ReadTextFile File="{x:Null}" Content="[SQLQuery]" DisplayName="Read Text File" FileName="Data\SQLQuery.txt" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Running Query for &quot; + currentEntity.Name]">
+              <ui:ReadTextFile File="{x:Null}" Content="[SQLQuery]" DisplayName="Read Text File" FileName="Data\SQLQuery.txt" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Running Query for &quot; + currentEntity.Name]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,7 +238,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_19">
+              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_19">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[SQLQuery]</OutArgument>
                 </Assign.To>
@@ -246,7 +246,13 @@
                   <InArgument x:TypeArguments="x:String">[SQLQuery.Replace("&lt;&lt;email&gt;&gt;",currentEntity.Email)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[NOT in_TestRead]" DisplayName="If not test read" sap:VirtualizedContainerService.HintSize="450,529" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[NOT in_TestRead]" DisplayName="If not test read" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
@@ -272,6 +278,12 @@
                   </Sequence>
                 </If.Else>
               </If>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateOrNotUpdate - Invoke Workflow File (UpdateOrNotUpdate.xaml)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateOrNotUpdate.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="n:NewHireManagementEmployee" x:Key="in_CurrentEntity">[currentEntity]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CourseTable">[CoursesTable]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </Sequence>
         </ActivityAction>
