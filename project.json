@@ -1,17 +1,25 @@
 {
-  "name": "NH01_RetrieveReport",
+  "name": "NH07_UpdateCourse",
   "projectId": "996a5515-1cff-4eb0-8cff-e165ca92c5c1",
   "description": "Retrieves report",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[2.0.0]",
+    "UiPath.DataService.Activities": "[24.11.1]",
     "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.MicrosoftOffice365.Activities": "[3.4.10]",
     "UiPath.System.Activities": "[24.10.8]",
     "UiPath.UIAutomation.Activities": "[24.10.13]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "CXE_Automation",
+      "namespace": "NH07_UpdateCourse",
+      "uniqueReference": "mbp1hBstdrlBaIwYbOT1qBcslhN7LNE6bOwlIx1YR1Y="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.16.0",
   "projectVersion": "1.0.2",
