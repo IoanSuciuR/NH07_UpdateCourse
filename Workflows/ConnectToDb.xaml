@@ -120,7 +120,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="1097,1136.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="1402,1136.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DBConnectionString" />
       <Variable x:TypeArguments="x:String" Name="DBUser" />
@@ -143,7 +143,7 @@
         <OutArgument x:TypeArguments="x:String">[DBConnectionString]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_Config("DBConnectionString").ToString.Replace("&lt;userid&gt;",DBUser).Replace("&lt;password&gt;",new System.Net.NetworkCredential("",DBPass).Password)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[DBConnectionString.Replace("&lt;userid&gt;",DBUser).Replace("&lt;password&gt;",new System.Net.NetworkCredential("",DBPass).Password)]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="Microsoft.Data.SQLClient" ConnectionString="[DBConnectionString]" DatabaseConnection="[out_DBConnection]" />
