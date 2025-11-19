@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="1479,1136.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="1111,1136.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="CourseTitles" />
       <Variable x:TypeArguments="x:String" Name="CourseType" />
@@ -160,10 +160,7 @@
         </FlowStep>
       </FlowDecision.True>
       <FlowDecision.False>
-        <FlowDecision x:Name="__ReferenceID1" DisplayName="Any Course to Check?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-          <FlowDecision.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="in_CourseTable.AsEnumerable.Any(function(r) {&quot;In Progress&quot;,&quot;Completed&quot;}.Contains(r(&quot;Status&quot;).ToString) )" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID1" Condition="[in_CourseTable.AsEnumerable.Any(function(r) {&quot;In Progress&quot;,&quot;Completed&quot;}.Contains(r(&quot;Status&quot;).ToString) )]" DisplayName="Any Course to Check?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
