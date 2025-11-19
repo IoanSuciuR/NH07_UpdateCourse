@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="1111,1136.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="1675,1136.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="CourseTitles" />
       <Variable x:TypeArguments="x:String" Name="CourseType" />
@@ -130,9 +130,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID28</x:Reference>
+      <x:Reference>__ReferenceID30</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID28" Condition="[in_CourseTable.RowCount = 0]" DisplayName="No Return" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID30" Condition="[in_CourseTable.RowCount = 0]" DisplayName="No Return" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowStep x:Name="__ReferenceID0">
+        <FlowStep x:Name="__ReferenceID1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">235,195</av:Point>
@@ -160,7 +160,7 @@
         </FlowStep>
       </FlowDecision.True>
       <FlowDecision.False>
-        <FlowDecision x:Name="__ReferenceID1" Condition="[in_CourseTable.AsEnumerable.Any(function(r) {&quot;In Progress&quot;,&quot;Completed&quot;}.Contains(r(&quot;Status&quot;).ToString) )]" DisplayName="Any Course to Check?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+        <FlowDecision x:Name="__ReferenceID2" Condition="[in_CourseTable.AsEnumerable.Any(function(r) {&quot;In Progress&quot;,&quot;Completed&quot;}.Contains(r(&quot;Status&quot;).ToString) )]" DisplayName="Any Course to Check?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,7 +171,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID3">
+            <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">495,515</av:Point>
@@ -187,109 +187,127 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID4" Condition="[in_CourseID = &quot;LP&quot;]" DisplayName="Check per Type" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                <FlowDecision x:Name="__ReferenceID5" Condition="[in_CourseID = &quot;LP&quot;]" DisplayName="Check per Type" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">520,660</av:Point>
                       <av:Size x:Key="ShapeSize">60,60</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">580,690 950,690 950,790</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">580,690 1030,690 1030,780</av:PointCollection>
                       <av:PointCollection x:Key="FalseConnector">520,690 330,690</av:PointCollection>
                       <x:String x:Key="TrueLabel">LearningPlan</x:String>
                       <x:String x:Key="FalseLabel">Courses</x:String>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowDecision x:Name="__ReferenceID6" DisplayName="All Completed?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                    <FlowDecision x:Name="__ReferenceID28" DisplayName="If old LP completed" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
                       <FlowDecision.Condition>
-                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.All(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot; AndAlso r(&quot;Status&quot;).ToString() = &quot;Completed&quot;))" />
+                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="New String() {&quot;6003455&quot;,&quot;6003456&quot;,&quot;6003457&quot;,&quot;6003414&quot;}.All(&#xD;&#xA;    Function(id) in_CourseTable.AsEnumerable().Any(&#xD;&#xA;        Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso&#xD;&#xA;                   r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot; AndAlso&#xD;&#xA;                   r(&quot;Status&quot;).ToString() = &quot;Completed&quot;&#xD;&#xA;    )&#xD;&#xA;)" />
                       </FlowDecision.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <av:Point x:Key="ShapeLocation">920,790</av:Point>
+                          <av:Point x:Key="ShapeLocation">1000,780</av:Point>
                           <av:Size x:Key="ShapeSize">60,60</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">920,820 800,820 800,875</av:PointCollection>
-                          <av:PointCollection x:Key="FalseConnector">980,820 1250,820</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">1000,810 880,810 880,865</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">1030,840 1030,1020</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID15">
+                        <FlowStep x:Name="__ReferenceID29">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">745,875</av:Point>
+                              <av:Point x:Key="ShapeLocation">825,865</av:Point>
                               <av:Size x:Key="ShapeSize">110,70</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">800,945 800,995</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">880,935 880,1105</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Get Completed Plan" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataRow">[CourseRow]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso r("Status").ToString = "Completed").OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
-                            </Assign.Value>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;Old LP Completed&quot;]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </Assign>
+                          </ui:LogMessage>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID14">
+                            <FlowStep x:Name="__ReferenceID0">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">745,995</av:Point>
+                                  <av:Point x:Key="ShapeLocation">825,1105</av:Point>
                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">800,1065 800,1125</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">880,1175 880,1225</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Set Completed" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_4" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseDone = true,  .CourseEndDate = Date.Parse(CourseRow(&quot;LastAccessDate&quot;).ToString),  .CourseProgression = &quot;100&quot;, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
-                                <uda:UpdateEntityRecord.State>
-                                  <udam:RecordState RequiredFieldCount="1">
-                                    <udam:RecordState.SelectedFields>
-                                      <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="4">
-                                        <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
-                                          <udam:DynamicEntityField.ArgumentValue>
-                                            <InArgument x:TypeArguments="x:String">[CourseRow("ItemName").ToString]</InArgument>
-                                          </udam:DynamicEntityField.ArgumentValue>
-                                        </udam:DynamicEntityField>
-                                        <udam:DynamicEntityField Id="f6b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseDone">
-                                          <udam:DynamicEntityField.ArgumentValue>
-                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                          </udam:DynamicEntityField.ArgumentValue>
-                                        </udam:DynamicEntityField>
-                                        <udam:DynamicEntityField Id="f4b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseEndDate">
-                                          <udam:DynamicEntityField.ArgumentValue>
-                                            <InArgument x:TypeArguments="s:DateTime">[Date.Parse(CourseRow("LastAccessDate").ToString)]</InArgument>
-                                          </udam:DynamicEntityField.ArgumentValue>
-                                        </udam:DynamicEntityField>
-                                        <udam:DynamicEntityField Id="f1b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseProgression">
-                                          <udam:DynamicEntityField.ArgumentValue>
-                                            <InArgument x:TypeArguments="x:String">100</InArgument>
-                                          </udam:DynamicEntityField.ArgumentValue>
-                                        </udam:DynamicEntityField>
-                                      </scg:List>
-                                    </udam:RecordState.SelectedFields>
-                                  </udam:RecordState>
-                                </uda:UpdateEntityRecord.State>
-                              </uda:UpdateEntityRecord>
+                              <Assign DisplayName="Get Completed Plan" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="sd:DataRow">[CourseRow]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso r("Status").ToString = "Completed").OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID13">
+                                <FlowStep x:Name="__ReferenceID15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">745,1125</av:Point>
+                                      <av:Point x:Key="ShapeLocation">825,1225</av:Point>
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">961,1908.268 961,1983.268</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">880,1295 880,1355</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Learning Plan Completed&quot;]">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:LogMessage>
+                                  <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Set Completed" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_4" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseDone = true,  .CourseEndDate = Date.Parse(CourseRow(&quot;LastAccessDate&quot;).ToString),  .CourseProgression = &quot;100&quot;, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
+                                    <uda:UpdateEntityRecord.State>
+                                      <udam:RecordState RequiredFieldCount="1">
+                                        <udam:RecordState.SelectedFields>
+                                          <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="4">
+                                            <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
+                                              <udam:DynamicEntityField.ArgumentValue>
+                                                <InArgument x:TypeArguments="x:String">[CourseRow("ItemName").ToString]</InArgument>
+                                              </udam:DynamicEntityField.ArgumentValue>
+                                            </udam:DynamicEntityField>
+                                            <udam:DynamicEntityField Id="f6b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseDone">
+                                              <udam:DynamicEntityField.ArgumentValue>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </udam:DynamicEntityField.ArgumentValue>
+                                            </udam:DynamicEntityField>
+                                            <udam:DynamicEntityField Id="f4b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseEndDate">
+                                              <udam:DynamicEntityField.ArgumentValue>
+                                                <InArgument x:TypeArguments="s:DateTime">[Date.Parse(CourseRow("LastAccessDate").ToString)]</InArgument>
+                                              </udam:DynamicEntityField.ArgumentValue>
+                                            </udam:DynamicEntityField>
+                                            <udam:DynamicEntityField Id="f1b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseProgression">
+                                              <udam:DynamicEntityField.ArgumentValue>
+                                                <InArgument x:TypeArguments="x:String">100</InArgument>
+                                              </udam:DynamicEntityField.ArgumentValue>
+                                            </udam:DynamicEntityField>
+                                          </scg:List>
+                                        </udam:RecordState.SelectedFields>
+                                      </udam:RecordState>
+                                    </uda:UpdateEntityRecord.State>
+                                  </uda:UpdateEntityRecord>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID14">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">825,1355</av:Point>
+                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">961,1908.268 961,1983.268</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Learning Plan Completed&quot;]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:LogMessage>
+                                    </FlowStep>
+                                  </FlowStep.Next>
                                 </FlowStep>
                               </FlowStep.Next>
                             </FlowStep>
@@ -297,137 +315,53 @@
                         </FlowStep>
                       </FlowDecision.True>
                       <FlowDecision.False>
-                        <FlowDecision x:Name="__ReferenceID26" DisplayName="Any started?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
-                          <FlowDecision.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.Any(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot;))" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID7" Condition="[New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.All(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot; AndAlso r(&quot;Status&quot;).ToString() = &quot;Completed&quot;))]" DisplayName="All Completed?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7" True="{x:Reference __ReferenceID0}">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <av:Point x:Key="ShapeLocation">1250,790</av:Point>
+                              <av:Point x:Key="ShapeLocation">1000,1020</av:Point>
                               <av:Size x:Key="ShapeSize">60,60</av:Size>
-                              <av:PointCollection x:Key="TrueConnector">1280,850 1280,950</av:PointCollection>
-                              <av:PointCollection x:Key="FalseConnector">1310,820 1425,820</av:PointCollection>
+                              <av:PointCollection x:Key="TrueConnector">1000,1050 880,1050 880,1105</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">1060,1050 1330,1050</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <FlowDecision.True>
-                            <FlowDecision x:Name="__ReferenceID19" DisplayName="Any in Progress?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
-                              <FlowDecision.Condition>
-                                <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.Any(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot; AndAlso New String() {&quot;In Progress&quot;,&quot;Enrolled&quot;}.Contains(r(&quot;Status&quot;).ToString())))" />
-                              </FlowDecision.Condition>
+                          <FlowDecision.False>
+                            <FlowDecision x:Name="__ReferenceID26" Condition="[New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.Any(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot;))]" DisplayName="Any started?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">1250,950</av:Point>
+                                  <av:Point x:Key="ShapeLocation">1330,1020</av:Point>
                                   <av:Size x:Key="ShapeSize">60,60</av:Size>
-                                  <av:PointCollection x:Key="TrueConnector">1280,1010 1280,1075</av:PointCollection>
-                                  <av:PointCollection x:Key="FalseConnector">1310,980 1495,980</av:PointCollection>
+                                  <av:PointCollection x:Key="TrueConnector">1360,1080 1360,1180</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">1390,1050 1505,1050</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID16">
+                                <FlowDecision x:Name="__ReferenceID19" Condition="[New String() {&quot;30003420&quot;,&quot;30003421&quot;,&quot;30003417&quot;,&quot;30003418&quot;}.Any(Function(id) in_CourseTable.AsEnumerable().Any(Function(r) r(&quot;ItemId&quot;).ToString() = id AndAlso r(&quot;ItemType&quot;).ToString() = &quot;LearningPlan&quot; AndAlso New String() {&quot;In Progress&quot;,&quot;Enrolled&quot;}.Contains(r(&quot;Status&quot;).ToString())))]" DisplayName="Any in Progress?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">1225,1075</av:Point>
-                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">1280,1145 1280,1195</av:PointCollection>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">1330,1180</av:Point>
+                                      <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">1360,1240 1360,1305</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">1390,1210 1575,1210</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign DisplayName="Get In progress Course" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_6">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="sd:DataRow">[CourseRow]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso {"In Progress","Enrolled"}.Contains(r("Status").ToString)).OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
-                                    </Assign.Value>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </Assign>
-                                  <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID18">
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID16">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">1225,1195</av:Point>
+                                          <av:Point x:Key="ShapeLocation">1305,1305</av:Point>
                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">1280,1265 1280,1325</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">1360,1375 1360,1425</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Progress" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_5" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseProgression = CourseRow(&quot;ProgressPercentage&quot;).ToString, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
-                                        <uda:UpdateEntityRecord.State>
-                                          <udam:RecordState RequiredFieldCount="1">
-                                            <udam:RecordState.SelectedFields>
-                                              <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="2">
-                                                <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
-                                                  <udam:DynamicEntityField.ArgumentValue>
-                                                    <InArgument x:TypeArguments="x:String">[CourseRow("ItemName").ToString]</InArgument>
-                                                  </udam:DynamicEntityField.ArgumentValue>
-                                                </udam:DynamicEntityField>
-                                                <udam:DynamicEntityField Id="f1b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseProgression">
-                                                  <udam:DynamicEntityField.ArgumentValue>
-                                                    <InArgument x:TypeArguments="x:String">[CourseRow("ProgressPercentage").ToString]</InArgument>
-                                                  </udam:DynamicEntityField.ArgumentValue>
-                                                </udam:DynamicEntityField>
-                                              </scg:List>
-                                            </udam:RecordState.SelectedFields>
-                                          </udam:RecordState>
-                                        </uda:UpdateEntityRecord.State>
-                                      </uda:UpdateEntityRecord>
-                                      <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID17">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">1225,1325</av:Point>
-                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">1220,1947.496 1220,2022.496</av:PointCollection>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;LEarning Plan Progress updated&quot;]">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </ui:LogMessage>
-                                        </FlowStep>
-                                      </FlowStep.Next>
-                                    </FlowStep>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.True>
-                              <FlowDecision.False>
-                                <FlowStep x:Name="__ReferenceID21">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">1495,945</av:Point>
-                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">1550,1015 1550,1065</av:PointCollection>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;No Learning Plan Started&quot;]">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:LogMessage>
-                                  <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID20">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">1495,1065</av:Point>
-                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">1550,1135 1550,1195</av:PointCollection>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Get Completed Plan" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                      <Assign DisplayName="Get In progress Course" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_6">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="sd:DataRow">[CourseRow]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso r("Status").ToString = "Completed").OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
+                                          <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso {"In Progress","Enrolled"}.Contains(r("Status").ToString)).OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
                                         </Assign.Value>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -436,15 +370,15 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </Assign>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID23">
+                                        <FlowStep x:Name="__ReferenceID18">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">1495,1195</av:Point>
+                                              <av:Point x:Key="ShapeLocation">1305,1425</av:Point>
                                               <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">1550,1265 1550,1325</av:PointCollection>
+                                              <av:PointCollection x:Key="ConnectorLocation">1360,1495 1360,1555</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Progress" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_6" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseProgression = CourseRow(&quot;ProgressPercentage&quot;).ToString, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
+                                          <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Progress" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_5" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseProgression = CourseRow(&quot;ProgressPercentage&quot;).ToString, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
                                             <uda:UpdateEntityRecord.State>
                                               <udam:RecordState RequiredFieldCount="1">
                                                 <udam:RecordState.SelectedFields>
@@ -465,15 +399,15 @@
                                             </uda:UpdateEntityRecord.State>
                                           </uda:UpdateEntityRecord>
                                           <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID22">
+                                            <FlowStep x:Name="__ReferenceID17">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">1495,1325</av:Point>
+                                                  <av:Point x:Key="ShapeLocation">1305,1555</av:Point>
                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">1508.6061747830925,1982.8765331756085 1508.6061747830925,2057.8765331756085</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">1220,1947.496 1220,2022.496</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;LEarning Plan Progress updated&quot;]">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;LEarning Plan Progress updated&quot;]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -485,27 +419,118 @@
                                         </FlowStep>
                                       </FlowStep.Next>
                                     </FlowStep>
-                                  </FlowStep.Next>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID21">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">1575,1175</av:Point>
+                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">1630,1245 1630,1295</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;No Learning Plan Started&quot;]">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:LogMessage>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID20">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">1575,1295</av:Point>
+                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">1630,1365 1630,1425</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Get Completed Plan" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="sd:DataRow">[CourseRow]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="sd:DataRow">[in_CourseTable.AsEnumerable.Where(Function(r) r("ItemType").ToString = "LearningPlan" AndAlso r("Status").ToString = "Completed").OrderByDescending(Function(r) DateTime.Parse(r("LastAccessDate").ToString)).FirstOrDefault]</InArgument>
+                                            </Assign.Value>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Assign>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID23">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">1575,1425</av:Point>
+                                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">1630,1495 1630,1555</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Progress" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_6" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = CourseRow(&quot;ItemName&quot;).ToString,  .CourseProgression = CourseRow(&quot;ProgressPercentage&quot;).ToString, .Id = in_CurrentEntity.Id }]" RecordId="[in_CurrentEntity.Id]" TimeoutInMs="30000">
+                                                <uda:UpdateEntityRecord.State>
+                                                  <udam:RecordState RequiredFieldCount="1">
+                                                    <udam:RecordState.SelectedFields>
+                                                      <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="2">
+                                                        <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
+                                                          <udam:DynamicEntityField.ArgumentValue>
+                                                            <InArgument x:TypeArguments="x:String">[CourseRow("ItemName").ToString]</InArgument>
+                                                          </udam:DynamicEntityField.ArgumentValue>
+                                                        </udam:DynamicEntityField>
+                                                        <udam:DynamicEntityField Id="f1b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseProgression">
+                                                          <udam:DynamicEntityField.ArgumentValue>
+                                                            <InArgument x:TypeArguments="x:String">[CourseRow("ProgressPercentage").ToString]</InArgument>
+                                                          </udam:DynamicEntityField.ArgumentValue>
+                                                        </udam:DynamicEntityField>
+                                                      </scg:List>
+                                                    </udam:RecordState.SelectedFields>
+                                                  </udam:RecordState>
+                                                </uda:UpdateEntityRecord.State>
+                                              </uda:UpdateEntityRecord>
+                                              <FlowStep.Next>
+                                                <FlowStep x:Name="__ReferenceID22">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">1575,1555</av:Point>
+                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">1508.6061747830925,1982.8765331756085 1508.6061747830925,2057.8765331756085</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;LEarning Plan Progress updated&quot;]">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:LogMessage>
+                                                </FlowStep>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID27">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">1505,1015</av:Point>
+                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;LP not started&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
                                 </FlowStep>
                               </FlowDecision.False>
                             </FlowDecision>
-                          </FlowDecision.True>
-                          <FlowDecision.False>
-                            <FlowStep x:Name="__ReferenceID27">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">1425,785</av:Point>
-                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;LP not started&quot;]">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
-                            </FlowStep>
                           </FlowDecision.False>
                         </FlowDecision>
                       </FlowDecision.False>
@@ -523,7 +548,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <FlowDecision.True>
-                        <FlowDecision x:Name="__ReferenceID5" Condition="[in_CourseTable.AsEnumerable.Any(function(r) r(&quot;ItemId&quot;).ToString = in_CourseID AndAlso r(&quot;Status&quot;).ToString = &quot;Completed&quot;)]" DisplayName="Any Completed?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                        <FlowDecision x:Name="__ReferenceID6" Condition="[in_CourseTable.AsEnumerable.Any(function(r) r(&quot;ItemId&quot;).ToString = in_CourseID AndAlso r(&quot;Status&quot;).ToString = &quot;Completed&quot;)]" DisplayName="Any Completed?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -534,7 +559,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowStep x:Name="__ReferenceID9">
+                            <FlowStep x:Name="__ReferenceID10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">55,905</av:Point>
@@ -556,7 +581,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </Assign>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID7">
+                                <FlowStep x:Name="__ReferenceID8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">55,1025</av:Point>
@@ -595,7 +620,7 @@
                                     </uda:UpdateEntityRecord.State>
                                   </uda:UpdateEntityRecord>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID8">
+                                    <FlowStep x:Name="__ReferenceID9">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">55,1155</av:Point>
@@ -617,7 +642,7 @@
                             </FlowStep>
                           </FlowDecision.True>
                           <FlowDecision.False>
-                            <FlowStep x:Name="__ReferenceID12">
+                            <FlowStep x:Name="__ReferenceID13">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">375,905</av:Point>
@@ -639,7 +664,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </Assign>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID11">
+                                <FlowStep x:Name="__ReferenceID12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">375,1025</av:Point>
@@ -668,7 +693,7 @@
                                     </uda:UpdateEntityRecord.State>
                                   </uda:UpdateEntityRecord>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID10">
+                                    <FlowStep x:Name="__ReferenceID11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">375,1155</av:Point>
@@ -715,7 +740,7 @@
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID2">
+            <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">765,365</av:Point>
@@ -734,7 +759,6 @@
         </FlowDecision>
       </FlowDecision.False>
     </FlowDecision>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
@@ -750,6 +774,7 @@
     <x:Reference>__ReferenceID13</x:Reference>
     <x:Reference>__ReferenceID14</x:Reference>
     <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID16</x:Reference>
     <x:Reference>__ReferenceID17</x:Reference>
     <x:Reference>__ReferenceID18</x:Reference>
@@ -762,5 +787,7 @@
     <x:Reference>__ReferenceID25</x:Reference>
     <x:Reference>__ReferenceID26</x:Reference>
     <x:Reference>__ReferenceID27</x:Reference>
+    <x:Reference>__ReferenceID28</x:Reference>
+    <x:Reference>__ReferenceID29</x:Reference>
   </Flowchart>
 </Activity>

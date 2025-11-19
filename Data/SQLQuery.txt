@@ -1,4 +1,4 @@
-WITH SelectedUser AS (
+﻿WITH SelectedUser AS (
     SELECT TOP 1 
         UserID,
         UserEmail,
@@ -18,7 +18,7 @@ LatestLPProgress AS (
         'LearningPlan' AS ItemType,
         ROW_NUMBER() OVER (PARTITION BY ulpd.UserID, ulpd.LearningPlanId ORDER BY ulpd.LastAccessDate DESC) AS rn
     FROM acad.user_lp_progress_data ulpd
-    WHERE ulpd.LearningPlanId IN ('30003420','30003421','30003417','30003418')
+    WHERE ulpd.LearningPlanId IN ('30003420','30003421','30003417','30003418','6003455','6003456','6003457','6003414')
 ),
 LatestCourseProgress AS (
     SELECT 
