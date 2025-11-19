@@ -163,7 +163,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1118,2384" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1095,2175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBConnection" />
@@ -175,20 +175,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings - Invoke Workflow File (Data\InitAllSettings.xaml)" sap:VirtualizedContainerService.HintSize="620,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data\InitAllSettings.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings - Invoke Workflow File (Data\InitAllSettings.xaml)" sap:VirtualizedContainerService.HintSize="624,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data\InitAllSettings.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile" />
         <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings"}]</InArgument>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToDb - Invoke Workflow File (Workflows\ConnectToDb.xaml)" sap:VirtualizedContainerService.HintSize="620,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflows\ConnectToDb.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConnectToDb - Invoke Workflow File (Workflows\ConnectToDb.xaml)" sap:VirtualizedContainerService.HintSize="624,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflows\ConnectToDb.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
         <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_DBConnection">[DBConnection]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uda:QueryEntityRecords x:TypeArguments="n:NewHireManagementEmployee" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="3" sap:VirtualizedContainerService.HintSize="620,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[RecordsToUpdate]" QueriedEntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+    <uda:QueryEntityRecords x:TypeArguments="n:NewHireManagementEmployee" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="3" sap:VirtualizedContainerService.HintSize="624,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[RecordsToUpdate]" QueriedEntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
       <uda:QueryEntityRecords.FilterArguments>
         <uda:FilterArgument FilterActivityType="{x:Null}">
           <uda:FilterArgument.Filter>
@@ -211,15 +211,15 @@
         </scg:List>
       </uda:QueryEntityRecords.FilterValues>
     </uda:QueryEntityRecords>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Records to update: &quot; + RecordsToUpdate.Count.ToString]" />
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[RolesTable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="620,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="Data\Roles.xlsx" />
-    <ui:ForEach x:TypeArguments="n:NewHireManagementEmployee" CurrentIndex="{x:Null}" DisplayName="For Each currentEntity" sap:VirtualizedContainerService.HintSize="620,1542" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RecordsToUpdate]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="624,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Records to update: &quot; + RecordsToUpdate.Count.ToString]" />
+    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[RolesTable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="624,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="Data\Roles.xlsx" />
+    <ui:ForEach x:TypeArguments="n:NewHireManagementEmployee" CurrentIndex="{x:Null}" DisplayName="For Each currentEntity" sap:VirtualizedContainerService.HintSize="624,1333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[RecordsToUpdate]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="n:NewHireManagementEmployee">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="n:NewHireManagementEmployee" Name="currentEntity" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="586,1405" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="590,1196" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="CoursesTable" />
               <Variable x:TypeArguments="x:String" Name="CourseID" />
@@ -229,168 +229,189 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[RolesTable.AsEnumerable.any(function(r) r(&quot;Employee Role&quot;).toString.tolower.contains(currentEntity.JobTitle.ToLower))]" DisplayName="If Role Found" sap:VirtualizedContainerService.HintSize="552,1345" sap2010:WorkflowViewState.IdRef="If_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,1159" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,1136" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <If Condition="[RolesTable.AsEnumerable.any(function(r) r(&quot;Employee Role&quot;).toString.tolower.contains(currentEntity.JobTitle.ToLower))]" DisplayName="If Role Found" sap:VirtualizedContainerService.HintSize="518,885" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[RolesTable.AsEnumerable.First(function(r) r(&quot;Employee Role&quot;).toString.tolower.contains(currentEntity.JobTitle.ToLower))(&quot;Learning Plan/Course&quot;).ToString]" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-                    <Switch.Default>
-                      <Assign sap:VirtualizedContainerService.HintSize="942,82" sap2010:WorkflowViewState.IdRef="Assign_20">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">LP</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Switch.Default>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign x:Key="TAM Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_21">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">3460</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign x:Key="CSM Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_23">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">11623</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign x:Key="SE Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_22">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">5934</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Switch>
-                  <Sequence DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="484,1042" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="SQLQuery" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReadTextFile File="{x:Null}" Content="[SQLQuery]" DisplayName="Read Text File" FileName="Data\SQLQuery.txt" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Running Query for &quot; + currentEntity.Name]">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,165" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:LogMessage>
-                    <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_19">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[SQLQuery]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[SQLQuery.Replace("&lt;&lt;email&gt;&gt;",currentEntity.Email)]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <If Condition="[NOT in_TestRead]" DisplayName="If not test read" sap:VirtualizedContainerService.HintSize="450,392" sap2010:WorkflowViewState.IdRef="If_2">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[RolesTable.AsEnumerable.First(function(r) r(&quot;Employee Role&quot;).toString.tolower.contains(currentEntity.JobTitle.ToLower))(&quot;Learning Plan/Course&quot;).ToString]" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                        <Switch.Default>
+                          <Assign sap:VirtualizedContainerService.HintSize="942,82" sap2010:WorkflowViewState.IdRef="Assign_20">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">LP</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Switch.Default>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign x:Key="TAM Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_21">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">3460</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign x:Key="CSM Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_23">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">11623</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign x:Key="SE Fast Start" sap:VirtualizedContainerService.HintSize="940,81" sap2010:WorkflowViewState.IdRef="Assign_22">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CourseID]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">5934</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Switch>
+                      <Sequence DisplayName="Run Query" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="SQLQuery" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ReadTextFile File="{x:Null}" Content="[SQLQuery]" DisplayName="Read Text File" FileName="Data\SQLQuery.txt" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Running Query for &quot; + currentEntity.Name]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[CoursesTable]" DisplayName="Run Query" ExistingDbConnection="[DBConnection]" sap:VirtualizedContainerService.HintSize="382,137" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="[SQLQuery]">
-                            <ui:ExecuteQuery.Parameters>
-                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                            </ui:ExecuteQuery.Parameters>
-                          </ui:ExecuteQuery>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[CoursesTable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="382,111" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Data\Input\Input.xlsx" />
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateOrNotUpdate - Invoke Workflow File (UpdateOrNotUpdate.xaml)" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateOrNotUpdate.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="n:NewHireManagementEmployee" x:Key="in_CurrentEntity">[currentEntity]</InArgument>
-                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CourseTable">[CoursesTable]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_CourseID">[CourseID]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </Sequence>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="518,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        </ui:LogMessage>
+                        <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_19">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[SQLQuery]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[SQLQuery.Replace("&lt;&lt;email&gt;&gt;",currentEntity.Email)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[NOT in_TestRead]" DisplayName="If not test read" sap:VirtualizedContainerService.HintSize="450,392" sap2010:WorkflowViewState.IdRef="If_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[CoursesTable]" DisplayName="Run Query" ExistingDbConnection="[DBConnection]" sap:VirtualizedContainerService.HintSize="382,137" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="[SQLQuery]">
+                                <ui:ExecuteQuery.Parameters>
+                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                </ui:ExecuteQuery.Parameters>
+                              </ui:ExecuteQuery>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[CoursesTable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="382,111" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Data\Input\Input.xlsx" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateOrNotUpdate - Invoke Workflow File (UpdateOrNotUpdate.xaml)" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateOrNotUpdate.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="n:NewHireManagementEmployee" x:Key="in_CurrentEntity">[currentEntity]</InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CourseTable">[CoursesTable]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_CourseID">[CourseID]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,582" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Course not needed&quot;]" />
+                      <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Entity Record" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="382,349" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_1" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = &quot;Not Required&quot;,  .CourseDone = true,  .CourseEndDate = DateTime.Now, .Id = currentEntity.Id }]" RecordId="[currentEntity.Id]" TimeoutInMs="30000">
+                        <uda:UpdateEntityRecord.State>
+                          <udam:RecordState RequiredFieldCount="1">
+                            <udam:RecordState.SelectedFields>
+                              <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
+                                <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
+                                  <udam:DynamicEntityField.ArgumentValue>
+                                    <InArgument x:TypeArguments="x:String">Not Required</InArgument>
+                                  </udam:DynamicEntityField.ArgumentValue>
+                                </udam:DynamicEntityField>
+                                <udam:DynamicEntityField Id="f6b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseDone">
+                                  <udam:DynamicEntityField.ArgumentValue>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </udam:DynamicEntityField.ArgumentValue>
+                                </udam:DynamicEntityField>
+                                <udam:DynamicEntityField Id="f4b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseEndDate">
+                                  <udam:DynamicEntityField.ArgumentValue>
+                                    <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+                                  </udam:DynamicEntityField.ArgumentValue>
+                                </udam:DynamicEntityField>
+                              </scg:List>
+                            </udam:RecordState.SelectedFields>
+                          </udam:RecordState>
+                        </uda:UpdateEntityRecord.State>
+                      </uda:UpdateEntityRecord>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="522,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uda:UpdateEntityRecord x:TypeArguments="n:NewHireManagementEmployee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update Entity Record" EntityId="c6b1668d-3e9f-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="382,349" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_1" InputEntityInFieldView="[new NH07_UpdateCourse.NewHireManagementEmployee() With {  .CourseChapter = &quot;Not Required&quot;,  .CourseDone = true,  .CourseEndDate = DateTime.Now, .Id = currentEntity.Id }]" RecordId="[currentEntity.Id]" TimeoutInMs="30000">
-                    <uda:UpdateEntityRecord.State>
-                      <udam:RecordState RequiredFieldCount="1">
-                        <udam:RecordState.SelectedFields>
-                          <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
-                            <udam:DynamicEntityField Id="f2b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseChapter">
-                              <udam:DynamicEntityField.ArgumentValue>
-                                <InArgument x:TypeArguments="x:String">Not Required</InArgument>
-                              </udam:DynamicEntityField.ArgumentValue>
-                            </udam:DynamicEntityField>
-                            <udam:DynamicEntityField Id="f6b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseDone">
-                              <udam:DynamicEntityField.ArgumentValue>
-                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                              </udam:DynamicEntityField.ArgumentValue>
-                            </udam:DynamicEntityField>
-                            <udam:DynamicEntityField Id="f4b1668d-3e9f-f011-b3cd-002248a46af2" Name="CourseEndDate">
-                              <udam:DynamicEntityField.ArgumentValue>
-                                <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
-                              </udam:DynamicEntityField.ArgumentValue>
-                            </udam:DynamicEntityField>
-                          </scg:List>
-                        </udam:RecordState.SelectedFields>
-                      </udam:RecordState>
-                    </uda:UpdateEntityRecord.State>
-                  </uda:UpdateEntityRecord>
-                </Sequence>
-              </If.Else>
-            </If>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="394,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Failed for &quot; + currentEntity.Name + &quot; with exception: &quot; + exception.Message]" />
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
