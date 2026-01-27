@@ -1,7 +1,7 @@
-WITH SelectedUser AS (
+﻿WITH SelectedUser AS (
     SELECT TOP 1 UserID, UserEmail
     FROM acad.user_data
-    WHERE UserEmail = @Email
+    WHERE UserEmail = '<<email>>'
     ORDER BY LastLogin DESC
 )
 SELECT 
