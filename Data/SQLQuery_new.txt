@@ -1,0 +1,27 @@
+WITH SelectedUser AS (
+    SELECT TOP 1 UserID, UserEmail
+    FROM acad.user_data
+    WHERE UserEmail = @Email
+    ORDER BY LastLogin DESC
+)
+SELECT 
+    su.UserEmail,
+    lp.LearningPlanId AS [ItemID],
+    lp.LearningPlanName AS [Name],
+    lp.Status,
+    lp.ProgressPercentage AS [Percentage]
+FROM SelectedUser su
+JOIN acad.user_lp_progress_data lp ON su.UserID = lp.UserID
+WHERE lp.LearningPlanId IN ('30003420','30003421','30003417','30003418')
+
+UNION ALL
+
+SELECT 
+    su.UserEmail,
+    c.CourseID AS [ItemID],
+    c.CourseTitle AS [Name],
+    c.Status,
+    c.ProgressPercentage AS [Percentage]
+FROM SelectedUser su
+JOIN acad.user_course_progress_data c ON su.UserID = c.UserID
+WHERE c.CourseID IN ('11623','5934','3460');

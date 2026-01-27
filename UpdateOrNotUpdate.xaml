@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="1347,1136.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="UpdateOrNotUpdate" sap:VirtualizedContainerService.HintSize="909,980" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="CourseTitles" />
       <Variable x:TypeArguments="x:String" Name="CourseType" />
