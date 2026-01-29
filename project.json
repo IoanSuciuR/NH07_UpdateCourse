@@ -15,14 +15,12 @@
   "entitiesStores": [
     {
       "serviceDocument": ".entities/EntitiesStore.json",
-      "tenantName": "CXE_Automation",
-      "namespace": "NH07_UpdateCourse",
-      "uniqueReference": "mbp1hBstdrlBaIwYbOT1qBcslhN7LNE6bOwlIx1YR1Y="
+      "namespace": "NH07_UpdateCourse"
     }
   ],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.16.0",
-  "projectVersion": "1.0.15",
+  "projectVersion": "1.0.17",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,7 +43,6 @@
     "projectProfile": "Developement",
     "outputType": "Process",
     "libraryOptions": {
-      "includeOriginalXaml": false,
       "privateWorkflows": []
     },
     "processOptions": {

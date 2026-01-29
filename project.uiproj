@@ -1,0 +1,6 @@
+{
+  "Name": "NH07_UpdateCourse",
+  "ProjectType": "Process",
+  "Description": "Retrieves report",
+  "MainFile": "Main.xaml"
+}
